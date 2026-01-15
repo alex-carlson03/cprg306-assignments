@@ -1,6 +1,15 @@
-import { Main } from "next/document";
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
-  return <Main></Main>;
+  return (
+    <main>
+      <h1>Assignments:</h1>
+      <p>
+        Week-2:{" "}
+        <Link className="textDecoration underline" href="/week-2">
+          here
+        </Link>
+      </p>
+    </main>
+  );
 }
