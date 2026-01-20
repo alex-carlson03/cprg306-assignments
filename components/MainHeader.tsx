@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function MainHeader() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const weeks: string[] = ["Week 1", "Week 2"]; // will add more weeks as class progresses
+  const weeks: string[] = ["Week 1", "Week 2", "Week 3"]; // will add more weeks as class progresses
 
   return (
     <header className="bg-slate-800 text-white shadow-md">
