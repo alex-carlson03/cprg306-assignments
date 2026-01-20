@@ -6,7 +6,8 @@ export default function Home() {
     <main className="bg-slate-50 min-h-screen text-black">
       <MainHeader />
       <div className="p-8 mx-auto">
-        <h1>Assignments:</h1>
+        <h1>CPRG 306</h1>
+        <p>Assignments:</p>
         <p>
           Week-2:{" "}
           <Link className="textDecoration underline" href="/week-2">
