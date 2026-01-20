@@ -12,6 +12,12 @@ export default function Home() {
           here
         </Link>
       </p>
+      <p>
+        Week-3:{" "}
+        <Link className="textDecoration underline" href="/week-3">
+          here
+        </Link>
+      </p>
     </main>
   );
 }
