@@ -4,10 +4,11 @@ import MainHeader from "../../components/MainHeader";
 
 export default function Page() {
   return (
-    <main>
+    <main className="bg-slate-50 min-h-screen">
       <MainHeader />
-      <h1>Shopping List</h1>
-      <StudentInfo />
+      <div className="flex justify-center">
+        <StudentInfo />
+      </div>
     </main>
   );
 }

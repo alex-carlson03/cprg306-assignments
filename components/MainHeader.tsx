@@ -9,7 +9,7 @@ export default function MainHeader() {
   const weeks: string[] = ["Week 1", "Week 2", "Week 3"]; // will add more weeks as class progresses
 
   return (
-    <header className="bg-slate-800 text-white shadow-md">
+    <header className="bg-slate-600 text-white shadow-md">
       <nav className="max-w-7xl mx-auto px-4">
         <ul className="flex items-center justify-around h-16">
           <li>
