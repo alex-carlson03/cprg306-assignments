@@ -20,6 +20,12 @@ export default function Home() {
             here
           </Link>
         </p>
+        <p>
+          Week-4:{" "}
+          <Link className="textDecoration underline" href="/week-4">
+            here
+          </Link>
+        </p>
       </div>
     </main>
   );
