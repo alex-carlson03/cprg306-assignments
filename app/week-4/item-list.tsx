@@ -14,9 +14,23 @@ export default function ItemList() {
   const [category, setCategory] = useState("");
   const [nameTouched, setNameTouched] = useState(false);
 
+  const categories: string[] = [
+    "Produce",
+    "Dairy",
+    "Bakery",
+    "Meat",
+    "Frozen Foods",
+    "Canned Goods",
+    "Dry Goods",
+    "Beverages",
+    "Snacks",
+    "Household",
+    "Other",
+  ];
+
   const addItem = (event: React.FormEvent) => {
     event.preventDefault();
-    if (!name) {
+    if (!name || name.length < 2) {
       setNameTouched(true);
       return;
     }
@@ -41,7 +55,7 @@ export default function ItemList() {
 
         <input
           className={
-            nameTouched && !name
+            nameTouched && (!name || name.length < 2)
               ? "w-full px-4 py-3 text-black rounded-lg border border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all placeholder:text-red-500"
               : "w-full px-4 py-3 text-black rounded-lg border border-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder:text-slate-500"
           }
@@ -50,8 +64,10 @@ export default function ItemList() {
           onChange={(e) => setName(e.target.value)}
           onBlur={() => setNameTouched(true)}
         />
-        {nameTouched && !name && (
-          <p className="text-red-500 text-sm">* Name is Required</p>
+        {nameTouched && (!name || name.length < 2) && (
+          <p className="text-red-500 text-sm">
+            * Please Enter at Least 2 Characters *
+          </p>
         )}
         <input
           className="w-full px-4 py-3 text-black rounded-lg border border-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder:text-slate-500"
@@ -61,12 +77,23 @@ export default function ItemList() {
           type="number"
         />
 
-        <input
+        {
+          //TODO category dropdown}
+        }
+        <select
           className="w-full px-4 py-3 text-black rounded-lg border border-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder:text-slate-500"
-          placeholder="Category"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-        />
+        >
+          <option value="" disabled>
+            {categories[0]}
+          </option>
+          {categories.map((cat) => (
+            <option key={cat} value={cat}>
+              {cat}
+            </option>
+          ))}
+        </select>
 
         <button
           type="submit"
