@@ -8,7 +8,7 @@ export default function Page() {
       <div className="max-w-3xl w-full bg-white/60 backdrop-blur-sm rounded-md shadow-md p-6 mt-6 flex flex-col items-center">
         <h1>Week 1</h1>
         <p>
-          Week one was just an into to web dev and an tutorial on how to create
+          Week one was just an intro to web dev and an tutorial on how to create
           new Next.js projects
         </p>
       </div>

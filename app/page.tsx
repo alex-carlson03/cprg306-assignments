@@ -4,6 +4,7 @@ import { Main } from "next/document";
 
 export default function Home() {
   const assignments = [
+    { week: "Week 1", href: "/week-1" },
     { week: "Week 2", href: "/week-2" },
     { week: "Week 3", href: "/week-3" },
     { week: "Week 4", href: "/week-4" },
