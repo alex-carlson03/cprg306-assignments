@@ -2,7 +2,7 @@ type itemProps = {
   name: string;
   quantity: number;
   category: string;
-  deleteItem: (name: string) => void;
+  deleteItem?: (name: string) => void;
 };
 
 export default function Item(itemProps: itemProps) {
@@ -11,7 +11,11 @@ export default function Item(itemProps: itemProps) {
       <div className="display-item-header flex items-center justify-between mb-2">
         <h3>{itemProps.name}</h3>
         {itemProps.deleteItem && (
-          <button onClick={() => itemProps.deleteItem(itemProps.name)}>
+          <button
+            onClick={() =>
+              itemProps.deleteItem && itemProps.deleteItem(itemProps.name)
+            }
+          >
             <img
               src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png"
               alt="Delete Item Button"
