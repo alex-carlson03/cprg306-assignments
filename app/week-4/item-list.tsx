@@ -77,9 +77,6 @@ export default function ItemList() {
           type="number"
         />
 
-        {
-          //TODO category dropdown}
-        }
         <select
           className="w-full px-4 py-3 text-black rounded-lg border border-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder:text-slate-500"
           value={category}

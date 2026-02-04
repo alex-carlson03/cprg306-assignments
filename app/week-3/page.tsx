@@ -3,11 +3,9 @@ import ItemList from "./item-list";
 
 export default function page() {
   return (
-    <main className="min-h-screen bg-[url(https://www.salon.com/app/uploads/2021/08/farmers-market-produce-0812211-1024x691.jpg)] bg-cover">
+    <main className="bg-slate-50 min-h-screen bg-[url(https://picsum.photos/id/1016/1920/1080?blur=3)]  bg-cover bg-fixed text-slate-900 font-sans flex flex-col items-center pb-10">
       <MainHeader />
-      <div className="backdrop-blur-sm bg-white/30 rounded-lg shadow-lg p-6 min-h-screen">
-        <ItemList />
-      </div>
+      <ItemList />
     </main>
   );
 }

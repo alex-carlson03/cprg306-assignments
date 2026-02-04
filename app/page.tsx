@@ -1,5 +1,6 @@
 import Link from "next/link";
 import MainHeader from "../components/MainHeader";
+import { Main } from "next/document";
 
 export default function Home() {
   const assignments = [
@@ -8,32 +9,34 @@ export default function Home() {
     { week: "Week 4", href: "/week-4" },
   ];
 
-
   return (
-    <main className="bg-slate-50 min-h-screen text-slate-900 font-sans">
+    <main className="bg-slate-50 min-h-screen bg-[url(https://picsum.photos/id/29/1920/1080?blur=3)] bg-cover bg-fixed text-slate-900 font-sans flex flex-col items-center pb-10">
       <MainHeader />
-      
-      <div className="max-w-2xl mx-auto p-8 mt-10 bg-white shadow-sm border border-slate-200 rounded-xl">
-        <header className="mb-8 border-b border-slate-100 pb-4">
+      <div className="w-full max-w-2xl mx-auto p-8 backdrop-blur-sm bg-white/30 rounded-2xl shadow-xl border border-slate-300 mt-10">
+        <header className="mb-8 border-b border-white/20 pb-4 text-center">
           <h1 className="text-4xl font-extrabold tracking-tight text-slate-800">
             CPRG 306
           </h1>
-          <p className="text-slate-500 mt-2">Web Development 2 Assignments</p>
+          <p className="text-slate-600 mt-2 font-medium">
+            Web Development 2 Assignments
+          </p>
         </header>
 
         <section>
-          <h2 className="text-lg font-semibold mb-4 text-slate-700">Coursework</h2>
+          <h2 className="text-lg font-semibold mb-4 text-slate-700">
+            Coursework
+          </h2>
           <div className="grid gap-3">
             {assignments.map((assignment) => (
-              <Link 
+              <Link
                 key={assignment.week}
                 href={assignment.href}
-                className="group flex items-center justify-between p-4 bg-slate-50 rounded-lg border border-transparent hover:border-blue-300 hover:bg-blue-50 transition-all duration-200"
+                className="group flex items-center justify-between p-4 bg-white/40 rounded-lg border border-white/20 hover:border-blue-400 hover:bg-white/60 transition-all duration-200 shadow-sm"
               >
-                <span className="font-medium text-slate-700 group-hover:text-blue-700">
+                <span className="font-medium text-slate-800 group-hover:text-blue-800">
                   {assignment.week}
                 </span>
-                <span className="text-sm font-semibold text-blue-600 group-hover:translate-x-1 transition-transform">
+                <span className="text-sm font-bold text-blue-700 group-hover:translate-x-1 transition-transform">
                   View Assignment →
                 </span>
               </Link>
