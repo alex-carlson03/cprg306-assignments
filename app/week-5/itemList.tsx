@@ -64,7 +64,6 @@ const ItemList = () => {
           Group by Category
         </button>
       </div>
-      {/* add category names separating the categories if sorted by category */}
       <div
         className={
           sortBy === "grouped"
