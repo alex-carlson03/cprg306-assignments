@@ -13,6 +13,7 @@ export default function MainHeader() {
     "Week 4",
     "Week 5",
     "Week 6",
+    "Week 7",
   ];
 
   return (

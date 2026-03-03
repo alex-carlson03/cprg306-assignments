@@ -22,14 +22,16 @@ export default function page() {
   };
 
   return (
-    <main className="bg-slate-50 min-h-screen bg-[url(https://picsum.photos/id/10/1920/1080?blur=3)]  bg-cover bg-fixed text-slate-900 font-sans flex flex-col items-center pb-10">
-      <div className="fixed top-0 w-full z-10">
-        <MainHeader />
-      </div>
-      <div className="mt-24 ">
-        <h1 className="text-3xl font-bold my-6">Shopping List</h1>
-        <NewItem onAddItem={handleAddItem} />
-        <ItemList items={items} />
+    <main>
+      <div className="bg-slate-50 min-h-screen bg-[url(https://picsum.photos/id/10/1920/1080?blur=3)]  bg-cover bg-fixed text-slate-900 font-sans flex flex-col items-center pb-10">
+        <div className="fixed top-0 w-full z-10">
+          <MainHeader />
+        </div>
+        <div className="mt-24 flex flex-col items-center w-full max-w-2xl p-6">
+          <h1 className="text-3xl font-bold my-6">Shopping List</h1>
+          <NewItem onAddItem={handleAddItem} />
+          <ItemList items={items} />
+        </div>
       </div>
     </main>
   );
