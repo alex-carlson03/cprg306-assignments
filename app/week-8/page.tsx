@@ -46,6 +46,14 @@ export default function page() {
     }
   }, [user, router]);
 
+  if (!user) {
+    return (
+      <div>
+        <p className="text-center mt-20 text-xl">Redirecting to login...</p>
+      </div>
+    );
+  }
+
   return (
     <main>
       <div className="bg-slate-50 min-h-screen bg-[url(https://picsum.photos/id/10/1920/1080?blur=3)]  bg-cover bg-fixed text-slate-900 font-sans flex flex-col items-center pb-10">
