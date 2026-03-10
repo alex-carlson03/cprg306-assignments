@@ -2,9 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useAuth } from "@/util/AuthProvider";
+import { sign } from "crypto";
 
 export default function MainHeader() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const { user, gitHubSignIn, signOutUser } = useAuth();
 
   const weeks: string[] = [
     "Week 1",
@@ -14,7 +17,16 @@ export default function MainHeader() {
     "Week 5",
     "Week 6",
     "Week 7",
+    "Week 8",
   ];
+
+  const signOut = () => {
+    signOutUser();
+  };
+
+  const signIn = () => {
+    gitHubSignIn();
+  };
 
   return (
     <header className="sticky top-0 z-100 w-full backdrop-blur-md bg-white/20 border-b border-white/30 shadow-sm">
@@ -80,6 +92,36 @@ export default function MainHeader() {
                     </li>
                   ))}
                 </ul>
+              )}
+            </li>
+
+            <li>
+              {user ? (
+                <div className="flex flex-row items-center gap-4">
+                  <img
+                    src={user?.photoURL || "https://via.placeholder.com/32"}
+                    alt="User Avatar"
+                    className="w-8 h-8 rounded-full"
+                  />
+                  <div className="flex flex-col items-start">
+                    <button
+                      onClick={signOut}
+                      className="text-slate-700 font-medium hover:text-blue-600 transition-colors duration-200"
+                    >
+                      Sign Out
+                    </button>
+                    <span className="text-slate-700 font-small">
+                      {user?.displayName}
+                    </span>
+                  </div>
+                </div>
+              ) : (
+                <button
+                  onClick={signIn}
+                  className="text-slate-700 font-medium hover:text-blue-600 transition-colors duration-200"
+                >
+                  Sign In with GitHub
+                </button>
               )}
             </li>
           </div>
